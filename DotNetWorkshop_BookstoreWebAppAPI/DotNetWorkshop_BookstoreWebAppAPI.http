@@ -1,0 +1,6 @@
+@DotNetWorkshop_BookstoreWebAppAPI_HostAddress = http://localhost:5112
+
+GET {{DotNetWorkshop_BookstoreWebAppAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
