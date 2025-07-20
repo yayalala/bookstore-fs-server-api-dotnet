@@ -1,8 +1,8 @@
-﻿using DotNetWorkshop_BookstoreWebAppAPI.Models;
+﻿using BookstoreServerApiDotnetCore.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace DotNetWorkshop_BookstoreWebAppAPI.Data
+namespace BookstoreServerApiDotnetCore.Data
 {
     //public class BookstoreContext : DbContext
     public class BookstoreContext : IdentityDbContext<AppUser>

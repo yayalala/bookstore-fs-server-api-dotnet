@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DotNetWorkshop_BookstoreWebAppAPI.Models
+namespace BookstoreServerApiDotnetCore.Models
 {
     public class LoginModel
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace DotNetWorkshop_BookstoreWebAppAPI.Models
+namespace BookstoreServerApiDotnetCore.Models
 {
     public class AppUser : IdentityUser
     {

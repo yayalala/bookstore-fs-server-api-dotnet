@@ -1,7 +1,7 @@
-﻿using DotNetWorkshop_BookstoreWebAppAPI.Models;
+﻿using BookstoreServerApiDotnetCore.Models;
 using Microsoft.AspNetCore.JsonPatch;
 
-namespace DotNetWorkshop_BookstoreWebAppAPI.Rpositories
+namespace BookstoreServerApiDotnetCore.Rpositories
 {
     public interface IBooksRepository
     {

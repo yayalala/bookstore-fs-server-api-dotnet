@@ -1,0 +1,6 @@
+@BookstoreServerApiDotnetCore_HostAddress = http://localhost:5112
+
+GET {{BookstoreServerApiDotnetCore_HostAddress}}/
+Accept: application/json
+
+###

@@ -1,4 +1,4 @@
-﻿namespace DotNetWorkshop_BookstoreWebAppAPI.Models
+﻿namespace BookstoreServerApiDotnetCore.Models
 {
     public class AuthorModel
     {

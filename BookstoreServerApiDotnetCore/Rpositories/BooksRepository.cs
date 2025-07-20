@@ -1,9 +1,9 @@
-﻿using DotNetWorkshop_BookstoreWebAppAPI.Data;
-using DotNetWorkshop_BookstoreWebAppAPI.Models;
+﻿using BookstoreServerApiDotnetCore.Data;
+using BookstoreServerApiDotnetCore.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.EntityFrameworkCore;
 
-namespace DotNetWorkshop_BookstoreWebAppAPI.Rpositories
+namespace BookstoreServerApiDotnetCore.Rpositories
 {
     public class BooksRepository : IBooksRepository
     {

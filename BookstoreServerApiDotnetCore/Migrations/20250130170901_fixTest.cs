@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace DotNetWorkshop_BookstoreWebAppAPI.Migrations
+namespace BookstoreServerApiDotnetCore.Migrations
 {
     /// <inheritdoc />
     public partial class fixTest : Migration

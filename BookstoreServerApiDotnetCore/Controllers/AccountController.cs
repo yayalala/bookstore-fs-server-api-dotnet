@@ -1,9 +1,9 @@
-﻿using DotNetWorkshop_BookstoreWebAppAPI.Models;
-using DotNetWorkshop_BookstoreWebAppAPI.Rpositories;
+﻿using BookstoreServerApiDotnetCore.Models;
+using BookstoreServerApiDotnetCore.Rpositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DotNetWorkshop_BookstoreWebAppAPI.Controllers
+namespace BookstoreServerApiDotnetCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

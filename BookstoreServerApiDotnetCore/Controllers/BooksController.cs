@@ -1,11 +1,11 @@
-﻿using DotNetWorkshop_BookstoreWebAppAPI.Models;
-using DotNetWorkshop_BookstoreWebAppAPI.Rpositories;
+﻿using BookstoreServerApiDotnetCore.Models;
+using BookstoreServerApiDotnetCore.Rpositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DotNetWorkshop_BookstoreWebAppAPI.Controllers
+namespace BookstoreServerApiDotnetCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -19,7 +19,7 @@ namespace DotNetWorkshop_BookstoreWebAppAPI.Controllers
         }
 
         [HttpGet("")]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> GetAllBooks() 
         { 
             var res = await _booksRepository.GetAllBooksAsync();

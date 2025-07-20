@@ -1,13 +1,13 @@
-using DotNetWorkshop_BookstoreWebAppAPI.Data;
-using DotNetWorkshop_BookstoreWebAppAPI.Models;
-using DotNetWorkshop_BookstoreWebAppAPI.Rpositories;
+using BookstoreServerApiDotnetCore.Data;
+using BookstoreServerApiDotnetCore.Models;
+using BookstoreServerApiDotnetCore.Rpositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-namespace DotNetWorkshop_BookstoreWebAppAPI
+namespace BookstoreServerApiDotnetCore
 {
     public class Program
     {
