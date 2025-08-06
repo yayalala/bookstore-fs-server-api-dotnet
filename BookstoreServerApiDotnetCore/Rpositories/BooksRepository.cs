@@ -33,10 +33,13 @@ namespace BookstoreServerApiDotnetCore.Rpositories
             {
                 return -1;
             }
-            BookModel bookModel = new() 
-            { 
-                Title = newBookModel.Title, 
-                Description = newBookModel.Description 
+            BookModel bookModel = new()
+            {
+                Title = newBookModel.Title,
+                Details = newBookModel.Details,
+                Price = newBookModel.Price,
+                Author = author,
+                ImageUrl = ""
             };
             author.Books.Add(bookModel);
             _context.Add(bookModel);
@@ -59,7 +62,7 @@ namespace BookstoreServerApiDotnetCore.Rpositories
             if (book != null && author != null)
             {
                 int index = author.Books.IndexOf(book);
-                book.Description = updatedModel.Description;
+                book.Details = updatedModel.Details;
                 book.Title = updatedModel.Title;
                 if ( index == -1 )
                 {
