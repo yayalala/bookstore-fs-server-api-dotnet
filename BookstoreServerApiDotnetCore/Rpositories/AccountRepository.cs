@@ -33,7 +33,7 @@ namespace BookstoreServerApiDotnetCore.Rpositories
             return result;
         }
 
-        public async Task<string> Login(LoginModel loginModel)
+        public async Task<string?> Login(LoginModel loginModel)
         {
             var result = await _signInManager.PasswordSignInAsync(loginModel.Email, loginModel.Password, false, false);
             if ( !result.Succeeded )
@@ -51,7 +51,10 @@ namespace BookstoreServerApiDotnetCore.Rpositories
                 new Claim(ClaimTypes.Name, email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
-            var authSigninKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["JWT:Secret"]));
+            var secret = _configuration["JWT:Secret"]
+             ?? throw new InvalidOperationException("JWT:Secret is not configured");
+
+            var authSigninKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secret));
             var token = new JwtSecurityToken(
                 issuer: _configuration["JWT:ValidIssuer"],
                 audience: _configuration["JWT:ValidAudience"],

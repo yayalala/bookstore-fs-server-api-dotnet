@@ -24,6 +24,12 @@ namespace BookstoreServerApiDotnetCore
             builder.Services.AddIdentity<AppUser, IdentityRole>().
                 AddEntityFrameworkStores<BookstoreContext>().
                 AddDefaultTokenProviders();
+
+            // Validate JWT secret before using it
+            var jwtSecret = builder.Configuration["JWT:Secret"];
+            if (string.IsNullOrWhiteSpace(jwtSecret))
+                throw new InvalidOperationException("JWT:Secret configuration value is missing or empty.");
+
             builder.Services.AddAuthentication(option =>
             {
                 option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -39,7 +45,7 @@ namespace BookstoreServerApiDotnetCore
                     ValidateAudience = true,
                     ValidAudience = builder.Configuration["JWT:ValidAudience"],
                     ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret))
                 };
             });
             builder.Services.AddControllers();

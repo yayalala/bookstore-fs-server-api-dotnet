@@ -53,6 +53,18 @@ namespace BookstoreServerApiDotnetCore.Controllers
             return CreatedAtAction(nameof(GetBookById), new { id, controller = "books" }, id);
         }
 
+        [HttpPost("addBatch")]
+        public async Task<IActionResult> AddNewBatchBook([FromBody] List<NewBookModel> newBooks)
+        {
+            var ids = await _booksRepository.AddBooksBatchAsync(newBooks);
+            if (ids == null || ids.Count == 0)
+            {
+                return BadRequest();
+            }
+            //return CreatedAtAction(nameof(GetBookById), new { id, controller = "books"}, newBookModel);
+            return Created("api/books/addBatch", ids);
+        }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateBook( [FromRoute] int id, [FromBody] NewBookModel newBookModel )
         {

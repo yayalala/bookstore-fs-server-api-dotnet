@@ -4,6 +4,6 @@
     {
         public int Id { get; set; }
         public required string Name { get; set; }
-        public IList<BookModel>? Books { get; set; }
+        public IList<BookModel> Books { get; set; } = new List<BookModel>();
     }
 }

@@ -14,6 +14,7 @@ namespace BookstoreServerApiDotnetCore.Models
         public int AuthorId { get; set; }
 
         [Required(ErrorMessage = "Please add a price")]
+        [Range(0, double.MaxValue, ErrorMessage = "Price can't be negative")]
         public required decimal Price { get; set; }
     }
 }
